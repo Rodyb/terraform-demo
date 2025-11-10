@@ -52,7 +52,7 @@ pipeline {
                         echo "Copy app stack to ec2 and start docker compose "
                         ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "mkdir -p /home/ubuntu/app"
                         scp -r -o StrictHostKeyChecking=no app/* ubuntu@${env.APP_IP}:/home/ubuntu/app/
-                        sleep 90
+                        sleep 30
 
                         ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "cd /home/ubuntu/app && docker compose up -d && docker ps"
                     """
@@ -66,7 +66,7 @@ pipeline {
                     sh """
                         echo "Run tests on dynamic env ${env.APP_IP}"
                         ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} '
-                            cd ~/app/tests &&
+                            cd ~/rest-assured &&
                             docker run --rm \\
                                 --network=app_default \\
                                 -e BASE_URL=http://fastapi_app:8000 \\
