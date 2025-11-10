@@ -19,7 +19,8 @@ pipeline {
 
                     script {
                         def currentIp = sh(script: "curl -s ifconfig.me", returnStdout: true).trim()
-                        echo "🌍 Detected current pipeline public IP: ${currentIp}"
+                        sh "echo Detected pipeline IP: ${currentIp} > detected_ip.txt"
+                        sh "cat detected_ip.txt"
 
                         sh """
                     terraform apply -auto-approve \
