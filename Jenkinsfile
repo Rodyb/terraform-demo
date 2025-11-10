@@ -23,7 +23,8 @@ pipeline {
                           -var="aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
                           -var="aws_region=${AWS_DEFAULT_REGION}" \
                           -var="pipeline_ip=${TF_PIPELINE_IP}" \
-                          -var="my_ip=${TF_MY_IP}"
+                          -var="my_ip=${TF_MY_IP}" \
+                          -var="environment=dev"
                     """
 
                     script {
@@ -49,7 +50,8 @@ pipeline {
                       -var="aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
                       -var="aws_region=${AWS_DEFAULT_REGION}" \
                       -var="pipeline_ip=${TF_PIPELINE_IP}" \
-                      -var="my_ip=${TF_MY_IP}"
+                      -var="my_ip=${TF_MY_IP}" \
+                      -var="environment=dev"
                 """
             }
         }
