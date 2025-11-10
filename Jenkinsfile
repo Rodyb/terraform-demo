@@ -20,8 +20,7 @@ pipeline {
                     script {
 //                        def currentIp = sh(script: "curl -s ifconfig.me", returnStdout: true).trim()
                         def currentIp = "157.245.75.110"
-                        sh "echo Detected pipeline IP: ${currentIp} > detected_ip.txt"
-                        sh "cat detected_ip.txt"
+
 
                         sh """
                     terraform apply -auto-approve \
@@ -49,13 +48,13 @@ pipeline {
             steps {
                 sshagent(['ansible-ssh-key-aws']) {
                     sh """
-                        echo "Copy docker compose.yml to dynamic env${env.APP_IP}"
-                        scp -o StrictHostKeyChecking=no docker-compose.yml ubuntu@${env.APP_IP}:/home/ubuntu/docker-compose.yml
+                        echo "Copy application stack to dynamic env${env.APP_IP}"
+                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} 'mkdir -p /home/ubuntu/app'
+                        scp -r -o StrictHostKeyChecking=no app/* ubuntu@${env.APP_IP}:/home/ubuntu/app/
         
-                        echo "Starting application stack"
+                        echo "Start app stack " ${env.APP_IP}"
                         ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} '
-                            cd /home/ubuntu &&
-                            docker compose pull &&
+                            cd /home/ubuntu/app &&
                             docker compose up -d &&
                             docker ps
                         '
