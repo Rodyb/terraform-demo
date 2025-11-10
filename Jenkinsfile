@@ -5,8 +5,8 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('jenkins_aws_access_key_id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins_aws_secret_access_key')
         AWS_DEFAULT_REGION    = "eu-central-1"
-        TF_PIPELINE_IP        = credentials('terraform_pipeline_ip')
-        TF_MY_IP              = credentials('terraform_my_ip')
+        TF_PIPELINE_IP        = credentials('TF_PIPELINE_IP')
+        TF_MY_IP              = credentials('TF_MY_IP')
     }
 
     stages {
