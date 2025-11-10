@@ -1,0 +1,10 @@
+# macOS-specific files
+.DS_Store
+
+# Terraform state and sensitive files
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+
+# Terraform lock file (optional)
+.terraform.lock.hcl
