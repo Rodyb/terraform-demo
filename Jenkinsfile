@@ -18,17 +18,15 @@ pipeline {
                     sh 'terraform init -upgrade'
 
                     script {
-//                        def currentIp = sh(script: "curl -s ifconfig.me", returnStdout: true).trim()
                         def currentIp = "157.245.75.110"
 
-
                         sh """
-                    terraform apply -auto-approve \
-                      -var="aws_region=${AWS_DEFAULT_REGION}" \
-                      -var="pipeline_ip=${currentIp}" \
-                      -var="my_ip=${TF_MY_IP}" \
-                      -var="environment=dev"
-                """
+                        terraform apply -auto-approve \
+                          -var="aws_region=${AWS_DEFAULT_REGION}" \
+                          -var="pipeline_ip=${currentIp}" \
+                          -var="my_ip=${TF_MY_IP}" \
+                          -var="environment=dev"
+                        """
 
                         def appIp = sh(
                                 script: "terraform output -raw app_public_ip",
