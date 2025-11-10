@@ -50,8 +50,9 @@ pipeline {
                     sh """
 
                         echo "Copy app stack to ec2 and start docker compose "
-                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "mkdir -p /home/ubuntu/app"
-                        scp -r -o StrictHostKeyChecking=no app/* ubuntu@${env.APP_IP}:/home/ubuntu/app/
+                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "mkdir -p /home/ubuntu/app /home/ubuntu/rest-assured"
+                        scp -r -o StrictHostKeyChecking=no app ubuntu@${env.APP_IP}:/home/ubuntu/
+                        scp -r -o StrictHostKeyChecking=no rest-assured ubuntu@${env.APP_IP}:/home/ubuntu/
                         sleep 90
 
                         ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "cd /home/ubuntu/app && docker compose up -d && docker ps"
