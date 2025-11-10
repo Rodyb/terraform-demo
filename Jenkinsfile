@@ -68,6 +68,7 @@ pipeline {
                         echo "Run tests on dynamic env ${env.APP_IP}"
                         ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} '
                             cd ~/rest-assured &&
+                            docker build -t restassured .
                             docker run --rm \\
                                 --network=app_default \\
                                 -e BASE_URL=http://fastapi_app:8000 \\
