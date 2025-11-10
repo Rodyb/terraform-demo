@@ -18,7 +18,8 @@ pipeline {
                     sh 'terraform init -upgrade'
 
                     script {
-                        def currentIp = sh(script: "curl -s ifconfig.me", returnStdout: true).trim()
+//                        def currentIp = sh(script: "curl -s ifconfig.me", returnStdout: true).trim()
+                        def currentIp = "157.245.75.110"
                         sh "echo Detected pipeline IP: ${currentIp} > detected_ip.txt"
                         sh "cat detected_ip.txt"
 
@@ -36,6 +37,9 @@ pipeline {
                         ).trim()
                         env.APP_IP = appIp
                         echo "EC2 instance created: ${appIp}"
+
+                        echo "Wait until env is ready"
+                        sleep(time: 30, unit: 'SECONDS')
                     }
                 }
             }
