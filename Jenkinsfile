@@ -48,17 +48,11 @@ pipeline {
             steps {
                 sshagent(['ansible-ssh-key-aws']) {
                     sh """
-                        echo "Copy application stack to dynamic env${env.APP_IP}"
-                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} 'mkdir -p /home/ubuntu/app'
+                        echo "Copy app stack to ec2 and start docker compose "
+                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "mkdir -p /home/ubuntu/app"
                         scp -r -o StrictHostKeyChecking=no app/* ubuntu@${env.APP_IP}:/home/ubuntu/app/
-        
-                        echo "Start app stack " ${env.APP_IP}"
-                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} '
-                            cd /home/ubuntu/app &&
-                            docker compose up -d &&
-                            docker ps
-                        '
-            """
+                        ssh -o StrictHostKeyChecking=no ubuntu@${env.APP_IP} "cd /home/ubuntu/app && docker compose up -d && docker ps"
+                    """
                 }
             }
         }
