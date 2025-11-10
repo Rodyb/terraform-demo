@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: fastapi_db
+    environment:
+      POSTGRES_USER: fastapi
+      POSTGRES_PASSWORD: fastapi
+      POSTGRES_DB: fastapidb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  fastapi-app:
+    build: .
+    container_name: fastapi_app
+    image: app-fastapi
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DATABASE_URL: postgresql://fastapi:fastapi@db:5432/fastapidb
+      WAIT_FOR_DB: "true"
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+volumes:
+  db_data:

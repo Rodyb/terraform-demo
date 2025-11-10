@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="integrationTest" time="0.649" tests="4" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/rodybothe/.m2/repository/org/apache/maven/surefire/surefire-booter/3.2.5/surefire-booter-3.2.5.jar:/Users/rodybothe/.m2/repository/org/apache/maven/surefire/surefire-api/3.2.5/surefire-api-3.2.5.jar:/Users/rodybothe/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.2.5/surefire-logger-api-3.2.5.jar:/Users/rodybothe/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.2.5/surefire-shared-utils-3.2.5.jar:/Users/rodybothe/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.2.5/surefire-extensions-spi-3.2.5.jar:/Users/rodybothe/Documents/youtube/episode2/rest-assured/target/test-classes:/Users/rodybothe/Documents/youtube/episode2/rest-assured/target/classes:/Users/rodybothe/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/rodybothe/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/rodybothe/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/rodybothe/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/rodybothe/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/rodybothe/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/rodybothe/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/rodybothe/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/rodybothe/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/rodybothe/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/rodybothe/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/rodybothe/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/rodybothe/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/rodybothe/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/rodybothe/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/rodybothe/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/rodybothe/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/rodybothe/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/rodybothe/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/rodybothe/.m2/repository/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar:/Users/rodybothe/.m2/repository/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar:/Users/rodybothe/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.2/junit-platform-launcher-1.10.2.jar"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Amsterdam"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="NL"/>
+    <property name="sun.boot.library.path" value="/Users/rodybothe/Library/Java/JavaVirtualMachines/temurin-21.0.7/Contents/Home/lib"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/rodybothe/Documents/youtube/episode2/rest-assured/target/surefire 2025-11-10T15-18-35_188-jvmRun1 surefire-20251110151835219_1tmp surefire_0-20251110151835219_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="integrationTest"/>
+    <property name="surefire.test.class.path" value="/Users/rodybothe/Documents/youtube/episode2/rest-assured/target/test-classes:/Users/rodybothe/Documents/youtube/episode2/rest-assured/target/classes:/Users/rodybothe/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/rodybothe/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/rodybothe/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/rodybothe/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/rodybothe/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/rodybothe/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/rodybothe/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/rodybothe/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/rodybothe/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/rodybothe/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/rodybothe/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/rodybothe/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/rodybothe/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/rodybothe/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/rodybothe/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/rodybothe/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/rodybothe/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/rodybothe/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/rodybothe/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/rodybothe/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/rodybothe"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="/Users/rodybothe/Library/Java/JavaVirtualMachines/temurin-21.0.7/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/rodybothe/Documents/youtube/episode2/rest-assured"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="21.0.7+6-LTS"/>
+    <property name="user.name" value="rodybothe"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.3.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.7+6"/>
+    <property name="localRepository" value="/Users/rodybothe/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/64/kw68gtrn6n9_shf46t3frl980000gn/T/"/>
+    <property name="java.version" value="21.0.7"/>
+    <property name="user.dir" value="/Users/rodybothe/Documents/youtube/episode2/rest-assured"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/rodybothe/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.7+6-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testCreateAndGetItem" classname="integrationTest" time="0.46">
+    <system-out><![CDATA[🔗 Testing FastAPI at: http://localhost:8000
+🗄️  DB Connection: jdbc:postgresql://db:5432/fastapidb
+✅ Created item ID: 2
+]]></system-out>
+  </testcase>
+  <testcase name="testItemIsPersistedInDB" classname="integrationTest" time="0.017">
+    <error message="No suitable driver found for jdbc:postgresql://db:5432/fastapidb" type="java.sql.SQLException"><![CDATA[java.sql.SQLException: No suitable driver found for jdbc:postgresql://db:5432/fastapidb
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:708)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at integrationTest.getConnection(integrationTest.java:30)
+	at integrationTest.testItemIsPersistedInDB(integrationTest.java:84)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+    <system-out><![CDATA[🧪 Checking persistence for item ID: 3
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteItem" classname="integrationTest" time="0.027">
+    <system-out><![CDATA[🗑️ Deleted item 4
+]]></system-out>
+  </testcase>
+  <testcase name="testItemIsRemovedFromDB" classname="integrationTest" time="0.019">
+    <error message="No suitable driver found for jdbc:postgresql://db:5432/fastapidb" type="java.sql.SQLException"><![CDATA[java.sql.SQLException: No suitable driver found for jdbc:postgresql://db:5432/fastapidb
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:708)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at integrationTest.getConnection(integrationTest.java:30)
+	at integrationTest.testItemIsRemovedFromDB(integrationTest.java:151)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+</testsuite>
