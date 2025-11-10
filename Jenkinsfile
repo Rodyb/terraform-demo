@@ -13,14 +13,12 @@ pipeline {
         stage('Provision EC2 with Terraform') {
             steps {
                 dir("terraform/ec2") {
-                    echo "Provisioning EC2 test environment..."
+                    echo "Provision EC2 dynamic test env"
 
                     sh 'terraform init -upgrade'
 
                     sh """
                         terraform apply -auto-approve \
-                          -var="aws_access_key=${AWS_ACCESS_KEY_ID}" \
-                          -var="aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
                           -var="aws_region=${AWS_DEFAULT_REGION}" \
                           -var="pipeline_ip=${TF_PIPELINE_IP}" \
                           -var="my_ip=${TF_MY_IP}" \
@@ -33,7 +31,7 @@ pipeline {
                                 returnStdout: true
                         ).trim()
                         env.APP_IP = appIp
-                        echo "✅ EC2 instance created: ${appIp}"
+                        echo "EC2 instance created: ${appIp}"
                     }
                 }
             }
@@ -46,8 +44,6 @@ pipeline {
             dir("terraform/ec2") {
                 sh """
                     terraform destroy -auto-approve \
-                      -var="aws_access_key=${AWS_ACCESS_KEY_ID}" \
-                      -var="aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
                       -var="aws_region=${AWS_DEFAULT_REGION}" \
                       -var="pipeline_ip=${TF_PIPELINE_IP}" \
                       -var="my_ip=${TF_MY_IP}" \
