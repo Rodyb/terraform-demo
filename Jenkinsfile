@@ -16,11 +16,13 @@ pipeline {
                     echo "Provision EC2 dynamic test env"
 
                     sh 'terraform init -upgrade'
+                    def currentIp = sh(script: "curl -s ifconfig.me", returnStdout: true).trim()
+                    echo "Current ip ${currentIp}"
 
                     sh """
                         terraform apply -auto-approve \
                           -var="aws_region=${AWS_DEFAULT_REGION}" \
-                          -var="pipeline_ip=${TF_PIPELINE_IP}" \
+                          -var="pipeline_ip=${currentIp}" \
                           -var="my_ip=${TF_MY_IP}" \
                           -var="environment=dev"
                     """
